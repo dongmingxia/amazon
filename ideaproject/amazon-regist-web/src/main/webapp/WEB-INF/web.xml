@@ -46,9 +46,9 @@
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
     
-    <context-param>
+     <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/springmvc2.xml</param-value>
+    <param-value></param-value>
     </context-param>
     
      <!-- spring核心监听器 -->

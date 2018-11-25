@@ -1,18 +1,33 @@
 package com.regist.web;
 
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/name")
+import com.regist.bean.User;
+
+@Controller
+@RequestMapping("/contro")
 public class WebContro {
 
-	@RequestMapping("/test")
-	public void testContro() {
+	@RequestMapping("/regist")
+	public String testContro() {
 		System.out.println("successful");
 		
+		return "regist";
+	}
+	
+	@RequestMapping("/reform")
+	public String registForm(User user) {
 		
+		if (user.getUsername()=="") {
+			return "nameerr";
+		}
+		if (user.getPassword()=="") {
+			return "pwserr";
+		}
+		
+	  System.out.println(user);
+		return "success";
 	}
 	
 }

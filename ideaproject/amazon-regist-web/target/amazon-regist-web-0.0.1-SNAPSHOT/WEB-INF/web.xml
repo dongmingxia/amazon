@@ -34,7 +34,7 @@
   	 
   	<init-param>
   		<param-name>contextConfigLocation</param-name>
-  		<param-value>classpath:spring/springmvc.xml</param-value>
+  		<param-value>classpath:spring/springmvc.xml</param-value><!--  classpath:spring/springmvc.xml-->
   	</init-param>
   	<load-on-startup>1</load-on-startup>
   </servlet>
@@ -46,13 +46,13 @@
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
     
-    <context-param>
+     <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/springmvc2.xml</param-value>
+    <param-value></param-value>
     </context-param>
     
      <!-- spring核心监听器 -->
- <listener>
+  <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
     
