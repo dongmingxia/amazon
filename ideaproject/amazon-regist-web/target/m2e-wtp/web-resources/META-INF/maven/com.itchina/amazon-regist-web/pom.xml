@@ -78,5 +78,11 @@
 	</dependency>
 
 
-   </dependencies>
+	<dependency>
+		<groupId>com.itchina</groupId>
+		<artifactId>amazon-regist-service</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<type>war</type>
+	</dependency>
+  </dependencies>
 </project>

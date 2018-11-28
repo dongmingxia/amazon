@@ -13,6 +13,8 @@ public class WebContro {
 	public String testContro() {
 		System.out.println("successful");
 		
+		
+		
 		return "regist";
 	}
 	

@@ -8,12 +8,26 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
    
-  <!--  组件扫描创建实体类  -->
- <context:component-scan base-package="com.regist.web"></context:component-scan>
+  <!--  组件扫描创建实体类 ,同时扫描controller，service，dao层 -->
+ <context:component-scan base-package="com.regist"></context:component-scan>
+	  
+	  <!-- 数据库连接池 -->
+	  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+	  
+	  <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	  <property name="url" value=""/>
+	  <property name="username" value="root"/>
+	  <property name="password" value="root"/>
+	  </bean>
+	  
+	  <!--配置mybatis的sqlsessionfactory  -->
+	  
+	  
 	  
 	<!-- 还有一个属性字段，一个容器中只有一个，从一个配置文件转换到下一个配置文件 -->
-	<!--   <context:property-placeholder location="classpath:spring/springmvc2.xml" />
-	  -->
+	<!-- 这个字段属于springmvc，还是spring -->
+	  <context:property-placeholder location="classpath:config/env.properties" />
+
 	<!-- 这是springmvc容器，不是web容器，只能由mvc容器使用 -->
 	<!-- 配置处理器适配器，处理器映射器 -->
 	 <mvc:annotation-driven>
